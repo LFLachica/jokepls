@@ -17,14 +17,30 @@
 
 module.exports = {
   'random': function(req, res, next) {
-    Jokes.find(function foundJokes(err, jokes) {
-      if (err) return next(err);
-			_.sample(jokes,1, function(joke) {
-			  console.log("random joke " + joke);
-				res.view({
-					 data: joke	
-				});
-			});
-    });
-  },  
+     Jokes.find(function(err,jokes) {
+       if(err) next(err);
+       if(jokes.length === 0) {
+       	  var joke = { "joke": "Ooops! No jokes for you."};
+       	  res.view({ joke : joke });
+       } else {
+      	  getRndJoke(jokes, function(joke) {
+       	    res.view({ joke : joke });
+          });
+       }
+     });
+  },
+
+  'all' : function(req,res,next) {
+     Jokes.find(function(err,jokes) {
+       if(err) next(err);       
+       res.view({ jokes : jokes });
+     });	  
+  }
+      
 };
+//fcn to get a random joke from the pool of jokes
+function getRndJoke (jokes, cb) {
+  var limit = jokes.length; 
+  var rndNo = Math.floor(Math.random() * limit); //make random number fall between 1 and jokes.length
+  cb(jokes[rndNo]);
+}

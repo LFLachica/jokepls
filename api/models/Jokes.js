@@ -9,7 +9,7 @@
 module.exports = {
 
   attributes: {
-  	
+  	schema : true,
   	joke: {
 		  type: "string",
 			required: true

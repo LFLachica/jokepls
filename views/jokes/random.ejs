@@ -1,9 +1,13 @@
+<a class="btn btn-default btn-default" href="/jokes">Go to All Jokes</a>
 <div class="page-header">
 	<h1>Random Joke</h1>
 </div>
 <p class="lead">
-	<%= data.joke%>
+	<%= joke.joke%>
 </p>
 <p class="text-muted">
-	tag: <%= data.tag%>, source: <a href="<%= data.source%>"><%= data.source%></a>
+	tag: <%= joke.tag%>, source: <a href="<%= joke.source%>"><%= joke.source%></a>
+</p>
+<p>
+  Mehehehe that's funny! <a class="btn btn-default btn-primary" href="/jokes/random">Give me another one</a>.
 </p>

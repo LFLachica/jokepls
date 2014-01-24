@@ -1,0 +1,19 @@
+<h3>All Jokes</h3>
+<table class='table'>
+<tr>
+  <th>Joke</th>
+  <th>Tag</th>
+  <th>Source</th>
+</tr>
+        
+<% _.each(jokes, function(joke) { %>
+  <tr>
+    <td><%= joke.joke %></td>
+    <td><%= joke.tag %></td>
+    <td><%= joke.source %></td>
+  </tr> 
+<% }) %>
+</table>
+<p>
+  <a class="btn btn-defaults btn-primary" href="/jokes/random">random joke please...</a>
+</p>

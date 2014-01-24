@@ -10,10 +10,16 @@ module.exports = {
 
   attributes: {
   	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
+  	joke: {
+		  type: "string",
+			required: true
+		},
+		tag: {
+		  type: "string"
+		},
+		source: {
+		  type: "string"
+		}
   }
 
 };

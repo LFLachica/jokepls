@@ -16,15 +16,15 @@
  */
 
 module.exports = {
-    
-  
-
-
-  /**
-   * Overrides for the settings in `config/controllers.js`
-   * (specific to JokesController)
-   */
-  _config: {}
-
-  
+  'random': function(req, res, next) {
+    Jokes.find(function foundJokes(err, jokes) {
+      if (err) return next(err);
+			_.sample(jokes,1, function(joke) {
+			  console.log("random joke " + joke);
+				res.view({
+					 data: joke	
+				});
+			});
+    });
+  },  
 };

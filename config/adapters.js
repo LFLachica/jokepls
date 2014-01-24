@@ -11,7 +11,7 @@
  * For more information on adapter configuration, check out:
  * http://sailsjs.org/#documentation
  */
-
+/*
 module.exports.adapters = {
 
   // If you leave the adapter config unspecified 
@@ -36,4 +36,5 @@ module.exports.adapters = {
     password: 'YOUR_MYSQL_PASSWORD', 
     database: 'YOUR_MYSQL_DB'
   }
-};
+	
+};*/

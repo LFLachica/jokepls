@@ -1,2 +1,2 @@
 # jokepls
-### A simple jokes API built using sails.js[http://sailsjs.org/]
+### A simple jokes API built using [Sails](http://sailsjs.org/)

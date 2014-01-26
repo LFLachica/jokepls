@@ -16,7 +16,7 @@
  */
 
 module.exports = {
-  'random': function(req, res, next) {
+  random: function(req, res, next) {
      Jokes.find(function(err,jokes) {
        if(err) next(err);
        if(jokes.length === 0) {
@@ -30,7 +30,7 @@ module.exports = {
      });
   },
 
-  'all' : function(req,res,next) {
+  index : function(req,res,next) {
      Jokes.find(function(err,jokes) {
        if(err) next(err);       
        res.view({ jokes : jokes });
@@ -40,7 +40,7 @@ module.exports = {
 };
 //fcn to get a random joke from the pool of jokes
 function getRndJoke (jokes, cb) {
-  var limit = jokes.length; 
+  var limit = jokes.length + 1; 
   var rndNo = Math.floor(Math.random() * limit); //make random number fall between 1 and jokes.length
-  cb(jokes[rndNo]);
+  cb(jokes[rndNo - 1]); //ensure no error if jokes.length = 1 and rndNo = 1
 }

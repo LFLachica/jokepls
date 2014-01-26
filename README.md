@@ -26,7 +26,7 @@ $ cd config
 
 lift sails
 ```
-$ sails lif
+$ sails lift
 ```
 
 To learn about sails, see [sailsjs.org](http://sailsjs.org/) or you can follow this [screencast](http://irlnathan.github.io/sailscasts/) by [Irl Nathan](https://github.com/irlnathan)  
